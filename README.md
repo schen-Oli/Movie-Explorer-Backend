@@ -5,7 +5,7 @@ Backend server for Movie Explorer project. Using The Movie Database to get infor
 
 For all APIs, `<media_type>` can only be `tv` or `movie`.
 
-1.  ***`/playing/<media_type>`***<br>
+-  ***`/playing/<media_type>`***<br>
    Get 10 current playing shows.<br>
    __Sample__ <br>
    `/playing/movie`
@@ -20,7 +20,7 @@ For all APIs, `<media_type>` can only be `tv` or `movie`.
     ]
 ```
 
-2. ***`/media/<media_type>/<ranking_type>`*** <br>
+- ***`/media/<media_type>/<ranking_type>`*** <br>
    Get 40 shows based on media type and ranking.<br>
    `<ranking_type>` can be `trending`, `top_rated` or `popular`.<br>
    __Sample__<br>
@@ -36,7 +36,7 @@ For all APIs, `<media_type>` can only be `tv` or `movie`.
     ]
 ```
 
-1. ***`/search/<query>`*** <br>
+- ***`/search/<query>`*** <br>
    Search shows given query.<br>
    __Sample__<br>
    `<query>` is `"harry"`
@@ -52,7 +52,7 @@ For all APIs, `<media_type>` can only be `tv` or `movie`.
     ]
 ```
 
-1. ***`/video/<media_type>/<id>`*** <br>
+- ***`/video/<media_type>/<id>`*** <br>
    Search trailer of a movie.<br>
    __Sample__<br>
    `/video/movie/76600`
@@ -66,7 +66,7 @@ For all APIs, `<media_type>` can only be `tv` or `movie`.
     }
 ```
 
-1. ***`/detail/<media_type>/<id>`*** <br>
+- ***`/detail/<media_type>/<id>`*** <br>
    Get details of a movie given type and id.<br>
    __Sample__<br>
    `/detail/movie/76600`
@@ -85,7 +85,7 @@ For all APIs, `<media_type>` can only be `tv` or `movie`.
     }
 ```
 
-1. ***`/cast/<media_type>/<id>`*** <br>
+- ***`/cast/<media_type>/<id>`*** <br>
    Get cast of a movie given type and id.<br>
    __Sample__<br>
    `/cast/movie/76600`
@@ -100,7 +100,7 @@ For all APIs, `<media_type>` can only be `tv` or `movie`.
     ]
 ```
 
-1. ***`/person/<id>`*** <br>
+- ***`/person/<id>`*** <br>
    Get details of a cast using their id.<br>
    __Sample__<br>
    `/person/65731`
@@ -129,7 +129,7 @@ For all APIs, `<media_type>` can only be `tv` or `movie`.
     }
 ```
 
-1. ***`/review/<media_type>/<id>`*** <br>
+- ***`/review/<media_type>/<id>`*** <br>
    Get reviews of a movie given type and id.<br>
    __Sample__<br>
    `/review/movie/76600`
@@ -146,7 +146,7 @@ For all APIs, `<media_type>` can only be `tv` or `movie`.
     ]
 ```
 
-1. ***`/recommendation/<media_type>/<id>`*** <br>
+- ***`/recommendation/<media_type>/<id>`*** <br>
    Get 40 recommendations based on a media given type and id.<br>
    __Sample__<br>
    `/recommendation/movie/76600`
@@ -161,7 +161,7 @@ For all APIs, `<media_type>` can only be `tv` or `movie`.
     ]
 ```
 
-1.  ***`/similar/<media_type>/<id>`*** <br>
+-  ***`/similar/<media_type>/<id>`*** <br>
    Get 40 similar shows based on a given type and id.<br>
    __Sample__<br>
    `/recommendation/movie/76600`
