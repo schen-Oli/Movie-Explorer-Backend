@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 
-var slides = require('./routes/currentPlay');
+var nowPlaying = require('./routes/now_playing');
 var search = require('./routes/searchM');
 var getData = require('./routes/getData');
 var getVideo = require('./routes/getVideo');
@@ -14,12 +14,11 @@ var getSimilar = require('./routes/Similar');
 
 const app = express();
 
-const path = require('path');
-
 app.use(cors());
 
 
-app.use('/currentPlay', slides);
+app.use('/now_playing', nowPlaying);
+
 app.use('/searchMulti', search);
 
 app.use('/getData', getData);
@@ -44,7 +43,7 @@ app.use('*', function(req, res){
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, ()=>{
     console.log(`Server listening on port ${PORT}...`);
-    console.log(`Access using url http://localhost:${PORT}...`);
+    console.log(`http://localhost:${PORT}...`);
 })
 
 module.exports = app;
