@@ -1,46 +1,36 @@
 const express = require('express');
 const cors = require('cors');
 
-var nowPlaying = require('./routes/now_playing');
-var search = require('./routes/searchM');
-var getData = require('./routes/getData');
-var getVideo = require('./routes/getVideo');
-var getDetail = require('./routes/getDetail');
-var getCast = require('./routes/getCast');
-var getCastDetail = require('./routes/getCastDetail');
-var getReview = require('./routes/getReview');
-var getRecommend = require('./routes/Recommended');
-var getSimilar = require('./routes/Similar');
+let nowPlaying = require('./routes/get_playing');
+var getMedia = require('./routes/get_media');
+var search = require('./routes/get_search');
+var getVideo = require('./routes/get_video');
+var getDetail = require('./routes/get_detail');
+var getCasts = require('./routes/get_casts');
+var getCastDetail = require('./routes/get_person');
+var getReview = require('./routes/get_review');
+var getRecommend = require('./routes/get_recommendation');
+var getSimilar = require('./routes/get_similar');
 
 const app = express();
 
 app.use(cors());
-
-
-app.use('/now_playing', nowPlaying);
-
-app.use('/searchMulti', search);
-
-app.use('/getData', getData);
-
-app.use('/getVideo',getVideo);
-
-app.use('/getDetail',getDetail);
-
-app.use('/getCast',getCast);
-
-app.use('/getCastDetail',getCastDetail);
-
-app.use('/getReview',getReview);
-
-app.use('/getRec',getRecommend);
-app.use('/getSim',getSimilar);
+app.use('/playing', nowPlaying);
+app.use('/media', getMedia);
+app.use('/search', search);
+app.use('/video',getVideo);
+app.use('/detail',getDetail);
+app.use('/cast',getCasts);
+app.use('/person',getCastDetail);
+app.use('/review',getReview);
+app.use('/recommendation',getRecommend);
+app.use('/similar',getSimilar);
 
 app.use('*', function(req, res){
     res.send("Welcome to Movie Explorer server");
 } )
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8085;
 app.listen(PORT, ()=>{
     console.log(`Server listening on port ${PORT}...`);
     console.log(`http://localhost:${PORT}...`);
