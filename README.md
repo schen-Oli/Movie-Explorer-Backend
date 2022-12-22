@@ -3,9 +3,11 @@ Backend server for Movie Explorer project. Using The Movie Database to get infor
 
 ## **REST APIs**
 
+For all APIs, `<media_type>` can only be `tv` or `movie`.
+
 1.  ***`/playing/<media_type>`***<br>
-   Get 10 current playing medias, media_type can be `movie` or `tv`.<br>
-   __Sample output__ <br>
+   Get 10 current playing shows.<br>
+   __Sample__ <br>
    `/playing/movie`
 ```json
     [
@@ -14,15 +16,14 @@ Backend server for Movie Explorer project. Using The Movie Database to get infor
             "id": 76600,
             "title": "Avatar: The Way of Water",
             "backdrop": "https://image.tmdb.org/t/p/original/1.jpg"
-        }...
+        }
     ]
 ```
 
 2. ***`/media/<media_type>/<ranking_type>`*** <br>
-   Get 40 medias based on media type and ranking.<br>
-   `<meida_type>` can be `movie` or `tv`.<br>
+   Get 40 shows based on media type and ranking.<br>
    `<ranking_type>` can be `trending`, `top_rated` or `popular`.<br>
-   __Sample output__<br>
+   __Sample__<br>
    `/media/movie/76600`
 ```json
     [
@@ -31,12 +32,12 @@ Backend server for Movie Explorer project. Using The Movie Database to get infor
             "id": 76600,
             "title": "Avatar: The Way of Water",
             "poster": "https://image.tmdb.org/t/p/original/1.jpg"
-        }...
+        }
     ]
 ```
 
-3. ***`/search/<query>`*** <br>
-   Search media given query.<br>
+1. ***`/search/<query>`*** <br>
+   Search shows given query.<br>
    __Sample__<br>
    `<query>` is `"harry"`
 ```json
@@ -47,11 +48,11 @@ Backend server for Movie Explorer project. Using The Movie Database to get infor
             "type": "movie",
             "title": "Harry Potter and the Philosopher's Stone",
             "backdrop": "https://image.tmdb.org/t/p/original/5jkE2SzR5uR2egEb1rRhF22JyWN.jpg"
-        }...
+        }
     ]
 ```
 
-4. ***`/video/<media_type>/<id>`*** <br>
+1. ***`/video/<media_type>/<id>`*** <br>
    Search trailer of a movie.<br>
    __Sample__<br>
    `/video/movie/76600`
@@ -65,7 +66,7 @@ Backend server for Movie Explorer project. Using The Movie Database to get infor
     }
 ```
 
-5. ***`/detail/<media_type>/<id>`*** <br>
+1. ***`/detail/<media_type>/<id>`*** <br>
    Get details of a movie given type and id.<br>
    __Sample__<br>
    `/detail/movie/76600`
@@ -84,7 +85,7 @@ Backend server for Movie Explorer project. Using The Movie Database to get infor
     }
 ```
 
-6. ***`/cast/<media_type>/<id>`*** <br>
+1. ***`/cast/<media_type>/<id>`*** <br>
    Get cast of a movie given type and id.<br>
    __Sample__<br>
    `/cast/movie/76600`
@@ -95,11 +96,11 @@ Backend server for Movie Explorer project. Using The Movie Database to get infor
             "id": 65731,
             "character": "Jake Sully",
             "profile": "https://image.tmdb.org/t/p/w500/blKKsHlJIL9PmUQZB8f3YmMBW5Y.jpg"
-        }...
+        }
     ]
 ```
 
-7. ***`/person/<id>`*** <br>
+1. ***`/person/<id>`*** <br>
    Get details of a cast using their id.<br>
    __Sample__<br>
    `/person/65731`
@@ -128,7 +129,7 @@ Backend server for Movie Explorer project. Using The Movie Database to get infor
     }
 ```
 
-8. ***`/review/<media_type>/<id>`*** <br>
+1. ***`/review/<media_type>/<id>`*** <br>
    Get reviews of a movie given type and id.<br>
    __Sample__<br>
    `/review/movie/76600`
@@ -141,12 +142,12 @@ Backend server for Movie Explorer project. Using The Movie Database to get infor
             "full": "https://www.themoviedb.org/review/639c14af0752880093558e1c",
             "rate": 6,
             "profile": "https://image.tmdb.org/t/p/original/blEC280vq31MVaDcsWBXuGOsYnB.jpg"
-        }...
+        }
     ]
 ```
 
-9. ***`/recommendation/<media_type>/<id>`*** <br>
-   Get recommendations based on a media given type and id.<br>
+1. ***`/recommendation/<media_type>/<id>`*** <br>
+   Get 40 recommendations based on a media given type and id.<br>
    __Sample__<br>
    `/recommendation/movie/76600`
 ```json
@@ -156,12 +157,12 @@ Backend server for Movie Explorer project. Using The Movie Database to get infor
             "id": 830784,
             "title": "Lyle, Lyle, Crocodile",
             "poster": "https://image.tmdb.org/t/p/w500/irIS5Tn3TXjNi1R9BpWvGAN4CZ1.jpg"
-        }...
+        }
     ]
 ```
 
-10. ***`/similar/<media_type>/<id>`*** <br>
-   Get similar media based on a given type and id.<br>
+1.  ***`/similar/<media_type>/<id>`*** <br>
+   Get 40 similar shows based on a given type and id.<br>
    __Sample__<br>
    `/recommendation/movie/76600`
 ```json
@@ -171,6 +172,6 @@ Backend server for Movie Explorer project. Using The Movie Database to get infor
             "id": 637,
             "title": "Life Is Beautiful",
             "poster": "https://image.tmdb.org/t/p/w500/mfnkSeeVOBVheuyn2lo4tfmOPQb.jpg"
-        }...
+        }
     ]
 ```
