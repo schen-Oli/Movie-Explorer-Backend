@@ -31,7 +31,8 @@ For all APIs, `<media_type>` can only be `tv` or `movie`.
             "type": "movie",
             "id": 76600,
             "title": "Avatar: The Way of Water",
-            "poster": "https://image.tmdb.org/t/p/original/1.jpg"
+            "poster": "https://image.tmdb.org/t/p/original/1.jpg",
+            "date": "2022"
         }
     ]
 ```

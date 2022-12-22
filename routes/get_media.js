@@ -8,8 +8,14 @@ function addDataToArray(arr, type, data) {
         var currData = data[i];
         if (currData.poster_path != null) {
             newObj.id = currData.id;
-            newObj.title = type == "movie" ? currData.original_title : currData.original_name;
-            newObj.type = type == "movie" ? "movie" : "tv";
+            if(type == "movie"){
+                newObj.title = currData.original_title;
+                newObj.date = currData.release_date.substring(0, 4);
+            }else{
+                newObj.title = currData.original_name;
+                newObj.date = currData.first_air_date.substring(0, 4);
+            }
+            newObj.type = type;
             newObj.poster = "https://image.tmdb.org/t/p/w500" + currData.poster_path;
             arr.push(newObj);
         }
