@@ -61,6 +61,7 @@ router.get('/:type/:id', function(req, res){
     + "?api_key=" + API 
     + "&language=en-US&page=1";
 
+    //console.log(url)
     axios.get(url).then(responde => {
         var result = responde.data;
         var ret = {};
@@ -70,7 +71,7 @@ router.get('/:type/:id', function(req, res){
             ret.date = getYear(result.release_date);
             ret.runtime = getRuntime(result.runtime);
         }else{
-            ret.title = title.name;
+            ret.title = result.name;
             ret.date = getYear(result.first_air_date);
             ret.runtime = getRuntime(result.episode_run_time);
         }

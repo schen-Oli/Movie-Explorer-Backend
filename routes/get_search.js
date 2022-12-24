@@ -13,10 +13,12 @@ router.get('/:q', function (req, res) {
         let results = searchRes.data.results;
         let ret = [];
 
+        let cnt = 0;
         for (var i = 0; i < results.length; i++) {
             var newObj = {}
             var currRes = results[i];
             if (currRes.media_type != "person" && currRes.backdrop_path != null) {
+                cnt ++;
                 newObj.media_type = currRes.media_type;
                 newObj.id = currRes.id;
                 newObj.type = currRes.media_type;
@@ -27,6 +29,9 @@ router.get('/:q', function (req, res) {
                 }
                 newObj.backdrop = backdrop + currRes.backdrop_path;
                 ret.push(newObj);
+            }
+            if (cnt >= 10){
+                break;
             }
         }
 

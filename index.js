@@ -30,7 +30,7 @@ app.use('*', function(req, res){
     res.send("Welcome to Movie Explorer server");
 } )
 
-const PORT = process.env.PORT || 8085;
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, ()=>{
     console.log(`Server listening on port ${PORT}...`);
     console.log(`http://localhost:${PORT}...`);

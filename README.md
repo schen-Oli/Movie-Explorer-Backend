@@ -1,4 +1,4 @@
-# __Movie-Explorer-Backend__
+# __Movie Explorer: Backend__
 Backend server for Movie Explorer project. Using The Movie Database to get information about movies and TV shows.
 
 ## **REST APIs**
